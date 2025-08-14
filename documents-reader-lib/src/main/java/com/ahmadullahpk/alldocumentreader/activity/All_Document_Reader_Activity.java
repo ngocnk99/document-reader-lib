@@ -81,7 +81,7 @@ public class All_Document_Reader_Activity extends AppCompatActivity {
                 finish();
                 return;
             }
-            ExtensionFunctions.toasty(this, "Unable to open file from here, Go to Document Reader App and try to open from them");
+            // ExtensionFunctions.toasty(this, "Unable to open file from here, Go to Document Reader App and try to open from them");
             finish();
         }
     }
