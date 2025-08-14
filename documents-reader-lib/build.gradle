@@ -1,12 +1,9 @@
 plugins {
-
     id 'com.android.library'
-
+    id 'maven-publish'
 }
 
 android {
-
-
     namespace 'com.nn.alldocumentreader'
     compileSdk 33
 
@@ -17,7 +14,6 @@ android {
         versionName "1.0.6"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
     buildFeatures {
@@ -42,15 +38,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -64,5 +59,20 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     
-     implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.3'
+    implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.3'
+}
+
+// Cấu hình để JitPack có thể build
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                
+                groupId = 'com.github.ngocnk99'
+                artifactId = 'all-documents-reader'
+                version = android.defaultConfig.versionName
+            }
+        }
+    }
 }
