@@ -1,4 +1,4 @@
-package com.ahmadullahpk.alldocumentreader.ExtensionFunctions;
+package com.ahmadullahpk.alldocumentreader;
 
 import android.content.Context;
 import android.view.View;
