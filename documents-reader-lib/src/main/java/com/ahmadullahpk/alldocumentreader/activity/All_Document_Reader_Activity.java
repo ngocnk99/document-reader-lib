@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import androidx.appcompat.app.AppCompatActivity;
-import com.ahmadullahpk.alldocumentreader.ExtensionFunctions;
+// import com.ahmadullahpk.alldocumentreader.ExtensionFunctions;
 import com.ahmadullahpk.alldocumentreader.util.Utility;
 import com.ahmadullahpk.alldocumentreader.xs.constant.MainConstant;
 import java.io.File;
