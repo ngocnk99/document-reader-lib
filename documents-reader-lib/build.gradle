@@ -4,12 +4,14 @@ plugins {
 }
 
 android {
-    namespace 'com.nn.alldocumentreader'
-    compileSdk 33
+    compileSdkVersion 33
+    buildToolsVersion '33.0.2'
+    namespace 'com.ahmadullahpk.alldocumentreader'
+ 
 
     defaultConfig {
-        minSdk 21
-        targetSdk 33
+        minSdk 23
+        targetSdk 34
         versionCode 6
         versionName "1.0.6"
         multiDexEnabled true
@@ -44,7 +46,7 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    // Bắt buộc để có components["release"] cho maven-publish
+    // 👇 Bắt buộc phải nằm trong android {}
     publishing {
         singleVariant("release") {
             withSourcesJar()
