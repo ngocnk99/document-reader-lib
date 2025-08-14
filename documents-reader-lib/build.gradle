@@ -7,18 +7,17 @@ android {
     compileSdkVersion 33
     buildToolsVersion '33.0.2'
     namespace 'com.ahmadullahpk.alldocumentreader'
- 
 
     defaultConfig {
-        minSdk 23
-        targetSdk 34
+        minSdkVersion 23
+        targetSdkVersion 34
         versionCode 6
         versionName "1.0.6"
-        multiDexEnabled true
+           multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildFeatures {
+       buildFeatures {
         viewBinding true
     }
 
@@ -33,11 +32,12 @@ android {
         exclude 'META-INF/ASL2.0'
         exclude 'META-INF/INDEX.LIST'
     }
-
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile(
+                'proguard-android-optimize.txt'
+            ), 'proguard-rules.pro'
         }
     }
 
@@ -45,8 +45,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-
-    // 👇 Bắt buộc phải nằm trong android {}
     publishing {
         singleVariant("release") {
             withSourcesJar()
@@ -70,15 +68,16 @@ dependencies {
 
     implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.3'
 }
-
 publishing {
     publications {
         create("release", MavenPublication) {
-            groupId = 'com.github.ngocnk99'
+            groupId = "com.github.ngocnk99"
             artifactId = 'all-documents-reader'
-            version = android.defaultConfig.versionName
+            version = "1.0.6"
 
-            from components["release"]
+            afterEvaluate {
+                from(components["release"])
+            }
         }
     }
 }
