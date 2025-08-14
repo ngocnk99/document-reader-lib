@@ -20,7 +20,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
-import   com.ahmadullahpk.alldocumentreader.R;
+import com.ahmadullahpk.alldocumentreader.R;
 
 public class ShimmerLayout extends FrameLayout {
     private static final byte DEFAULT_ANGLE = 20;

@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 
-import   com.ahmadullahpk.alldocumentreader.R;
+import com.ahmadullahpk.alldocumentreader.R;
 
 
 public final class RoundCornerFrameLay extends FrameLayout {

@@ -12,7 +12,7 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import   com.ahmadullahpk.alldocumentreader.R;
+import com.ahmadullahpk.alldocumentreader.R;
 import   com.ahmadullahpk.alldocumentreader.widgets.tableview.adapter.AbstractTableAdapter;
 import   com.ahmadullahpk.alldocumentreader.widgets.tableview.adapter.recyclerview.CellRecyclerView;
 import   com.ahmadullahpk.alldocumentreader.widgets.tableview.adapter.recyclerview.holder.AbstractViewHolder;

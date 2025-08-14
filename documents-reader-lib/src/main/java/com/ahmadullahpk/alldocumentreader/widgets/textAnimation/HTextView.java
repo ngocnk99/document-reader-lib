@@ -1,4 +1,4 @@
-package   com.ahmadullahpk.alldocumentreader.widgets.textAnimation;
+package  com.ahmadullahpk.alldocumentreader.widgets.textAnimation;
 
 
 import android.content.Context;

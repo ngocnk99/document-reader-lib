@@ -1,4 +1,4 @@
-package com.filemanager.activity;
+package com.ahmadullahpk.alldocumentreader.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.filemanager.R;
+import com.ahmadullahpk.alldocumentreader.R;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.util.FitPolicy;
 

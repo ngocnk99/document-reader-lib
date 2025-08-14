@@ -31,7 +31,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import   com.ahmadullahpk.alldocumentreader.R;
+import com.ahmadullahpk.alldocumentreader.R;
 import   com.ahmadullahpk.alldocumentreader.widgets.tableview.listener.scroll.HorizontalRecyclerViewListener;
 import   com.ahmadullahpk.alldocumentreader.widgets.tableview.listener.scroll.VerticalRecyclerViewListener;
 

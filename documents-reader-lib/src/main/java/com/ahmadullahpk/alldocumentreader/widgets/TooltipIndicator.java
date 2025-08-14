@@ -21,7 +21,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import   com.ahmadullahpk.alldocumentreader.R;
+import com.ahmadullahpk.alldocumentreader.R;
 
 import java.util.List;
 

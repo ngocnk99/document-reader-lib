@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import androidx.documentfile.provider.DocumentFile;
 
-import   com.ahmadullahpk.alldocumentreader.R;
+import com.ahmadullahpk.alldocumentreader.R;
 import com.ahmadullahpk.alldocumentreader.dataType.Model_Main;
 
 import java.io.File;
