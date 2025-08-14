@@ -176,8 +176,9 @@ public class MainControl extends AbstractControl {
                 if (Build.VERSION.SDK_INT >= 11) {
                     try {
                         View view2 = MainControl.this.getView();
-                        Object invoke = view2.getClass().getMethod("isHardwareAccelerated", null).invoke(view2, null);
-                        if (invoke != null && (invoke instanceof Boolean) && (Boolean) invoke) {
+                        Object invoke = view2.getClass()
+                            .getMethod("isHardwareAccelerated", (Class<?>[]) null)
+                            .invoke(view2, (Object[]) null);                        if (invoke != null && (invoke instanceof Boolean) && (Boolean) invoke) {
                             view2.getClass().getMethod("setLayerType", Integer.TYPE, Paint.class).invoke(view2, view2.getClass().getField("LAYER_TYPE_SOFTWARE").getInt(null), null);
                         }
                     } catch (Exception e) {

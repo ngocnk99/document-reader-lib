@@ -32,6 +32,11 @@ public class ColorUtil
     {
         return util;
     }
+    public static ColorUtil getInstance()
+    {
+        return util;
+    }
+    
     
     /**
      * Return a color-int from red, green, blue components.
