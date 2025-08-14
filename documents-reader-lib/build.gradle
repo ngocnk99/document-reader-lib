@@ -38,10 +38,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // Bắt buộc để có components["release"] cho maven-publish
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
     }
 }
 
@@ -58,21 +65,18 @@ dependencies {
     implementation group: 'org.apache.commons', name: 'commons-compress', version: '1.20'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
-    
+
     implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.3'
 }
 
-// Cấu hình để JitPack có thể build
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                
-                groupId = 'com.github.ngocnk99'
-                artifactId = 'all-documents-reader'
-                version = android.defaultConfig.versionName
-            }
+publishing {
+    publications {
+        create("release", MavenPublication) {
+            groupId = 'com.github.ngocnk99'
+            artifactId = 'all-documents-reader'
+            version = android.defaultConfig.versionName
+
+            from components["release"]
         }
     }
 }
