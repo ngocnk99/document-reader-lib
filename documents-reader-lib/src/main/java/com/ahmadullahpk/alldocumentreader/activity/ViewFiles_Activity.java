@@ -349,10 +349,8 @@ public class ViewFiles_Activity extends BaseActivity implements IMainFrame {
                 lowerCase.endsWith(MainConstant.FILE_TYPE_PPTM) ||
                 lowerCase.endsWith(MainConstant.FILE_TYPE_POTX) ||
                 lowerCase.endsWith(MainConstant.FILE_TYPE_POTM)) {
-            this.applicationType = 2;
-        } else if (lowerCase.endsWith("pdf")) {
-            this.applicationType = 3;
-        } else {
+                this.applicationType = 2;
+         else {
             this.applicationType = 0;
         }
     }
