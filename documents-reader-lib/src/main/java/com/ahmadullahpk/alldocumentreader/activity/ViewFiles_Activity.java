@@ -34,6 +34,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import androidx.core.content.FileProvider;
 
 public class ViewFiles_Activity extends BaseActivity implements IMainFrame {
 
@@ -389,11 +390,35 @@ public class ViewFiles_Activity extends BaseActivity implements IMainFrame {
     }
 
     private void shareFile() {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        Uri parse = Uri.parse(this.filePath);
-        intent.setType("*/*");
-        intent.putExtra(Intent.EXTRA_STREAM, parse);
-        startActivity(Intent.createChooser(intent, getResources().getString(R.string.shareUsing)));
+        try {
+            // Kiểm tra file tồn tại
+            File file = new File(this.filePath);
+            if (!file.exists()) {
+                return;
+            }
+
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            
+            // Sửa cách tạo URI - dùng FileProvider thay vì Uri.parse
+            Uri fileUri;
+            try {
+                String authority = getPackageName() + ".fileshare.fileprovider";
+                fileUri = FileProvider.getUriForFile(this, authority, file);
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            } catch (Exception e) {
+                // Fallback về Uri.fromFile nếu FileProvider lỗi
+                fileUri = Uri.fromFile(file);
+            }
+            
+            intent.setType("*/*");
+            intent.putExtra(Intent.EXTRA_STREAM, fileUri); // Dùng fileUri thay vì parse
+            
+            startActivity(Intent.createChooser(intent, getResources().getString(R.string.shareUsing)));
+            
+        } catch (Exception e) {
+            return;
+
+        }
     }
 
     public void fileShare() {

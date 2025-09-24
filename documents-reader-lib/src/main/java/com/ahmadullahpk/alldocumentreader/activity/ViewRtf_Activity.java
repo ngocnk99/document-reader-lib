@@ -28,7 +28,7 @@ import com.ahmadullahpk.alldocumentreader.util.RtfReader;
 import com.ahmadullahpk.alldocumentreader.util.Utility;
 
 import java.io.File;
-
+import androidx.core.content.FileProvider;
 public class ViewRtf_Activity extends AppCompatActivity {
 
     ActivityViewRtfBinding binding;
@@ -176,12 +176,35 @@ public class ViewRtf_Activity extends AppCompatActivity {
     }
 
     private void shareFile() {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        Uri parse = Uri.parse(this.filePath);
-        intent.setType("*/*");
-        intent.putExtra(Intent.EXTRA_STREAM, parse);
-        startActivity(Intent.createChooser(intent, "Share File"));
+        try {
+            // Kiểm tra file tồn tại
+            File file = new File(this.filePath);
+            if (!file.exists()) {
+                return;
+            }
 
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            
+            // Sửa cách tạo URI - dùng FileProvider thay vì Uri.parse
+            Uri fileUri;
+            try {
+                String authority = getPackageName() + ".fileshare.fileprovider";
+                fileUri = FileProvider.getUriForFile(this, authority, file);
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            } catch (Exception e) {
+                // Fallback về Uri.fromFile nếu FileProvider lỗi
+                fileUri = Uri.fromFile(file);
+            }
+            
+            intent.setType("*/*");
+            intent.putExtra(Intent.EXTRA_STREAM, fileUri); // Dùng fileUri thay vì parse
+            
+            startActivity(Intent.createChooser(intent, getResources().getString(R.string.shareUsing)));
+            
+        } catch (Exception e) {
+            return;
+
+        }
     }
 
 
