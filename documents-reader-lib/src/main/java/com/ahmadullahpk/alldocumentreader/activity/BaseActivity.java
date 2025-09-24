@@ -97,16 +97,16 @@ public class BaseActivity extends AppCompatActivity {
     }
     
     private void showAndHide(boolean z) {
-        CustomFrameLayout linearLayout = findViewById(R.id.appToolbar);
-        if (linearLayout == null) {
-            return;
-        }
+        // CustomFrameLayout linearLayout = findViewById(R.id.appToolbar);
+        // if (linearLayout == null) {
+        //     return;
+        // }
         
-        if (z) {
-            linearLayout.setVisibility(View.VISIBLE);
-        } else {
-            linearLayout.setVisibility(View.GONE);
-        }
+        // if (z) {
+        //     linearLayout.setVisibility(View.VISIBLE);
+        // } else {
+        //     linearLayout.setVisibility(View.GONE);
+        // }
     }
     
     public void checkAndLunchActivity(Intent intent) {
