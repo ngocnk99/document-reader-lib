@@ -34,6 +34,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import androidx.core.content.FileProvider;
 
 public class ViewFiles_Activity extends BaseActivity implements IMainFrame {
 

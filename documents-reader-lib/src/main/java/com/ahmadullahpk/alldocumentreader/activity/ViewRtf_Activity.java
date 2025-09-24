@@ -26,6 +26,7 @@ import com.ahmadullahpk.alldocumentreader.util.RtfHtmlDataType;
 import com.ahmadullahpk.alldocumentreader.util.RtfParseException;
 import com.ahmadullahpk.alldocumentreader.util.RtfReader;
 import com.ahmadullahpk.alldocumentreader.util.Utility;
+import androidx.core.content.FileProvider;
 
 import java.io.File;
 
