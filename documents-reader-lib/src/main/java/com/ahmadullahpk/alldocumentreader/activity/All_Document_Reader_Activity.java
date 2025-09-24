@@ -56,11 +56,7 @@ public class All_Document_Reader_Activity extends AppCompatActivity {
                 int fileType = MainConstant.getFileType(str);
                 m_intent = new Intent(this, ViewFiles_Activity.class);
                 
-                if (filepath.endsWith("pdf")) {
-                    m_intent = new Intent(this, PDF_Reader_Activity.class);
-                    m_intent.setAction("android.intent.action.VIEW");
-                    m_intent.setData(Uri.fromFile(new File(filepath)));
-                }
+
                 
                 if (filepath.endsWith("rtf")) {
                     m_intent = new Intent(this, ViewRtf_Activity.class);
